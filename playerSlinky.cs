@@ -25,7 +25,7 @@ public class playerSlinky : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 
 		transform.localScale = new Vector3(1, 1, 1);
-		transform.position = new Vector3(0,0,0);
+		//transform.position = new Vector3(0,0,0);
 
 		stretch = 0;
 		Xstretch = 1;
@@ -68,30 +68,30 @@ public class playerSlinky : MonoBehaviour {
 			if (stretch == 0) {
 				if (Xstretch != 1) {
 					transform.localScale -= new Vector3(speed / 100f, 0f, 0f);
-					Xstretch -= 1;
+					Xstretch -= speed / 10;
 					//Debug.Log(Xstretch);
 					if (Xpos > 0) {
 						transform.position -= new Vector3(speed / 200f, 0f, 0f);
-						Xpos -= 1;
+						Xpos -= speed / 10;
 						//Debug.Log(Xpos);
 					}
 					else if (Xpos < 0) {
 						transform.position += new Vector3(speed / 200f, 0f, 0f);
-						Xpos += 1;
+						Xpos += speed / 10;
 						//Debug.Log(Xpos);
 					}
 				}
 				else if (Zstretch != 1) {
 					transform.localScale -= new Vector3(0f, 0f, speed / 100f);
-					Zstretch -= 1;
+					Zstretch -= speed / 10;
 					if (Zpos > 0) {
 						transform.position -= new Vector3(0f, 0f, speed / 200f);
-						Zpos -= 1;
+						Zpos -= speed / 10;
 						//Debug.Log(Zpos);
 					}
 					else if (Zpos < 0) {
 						transform.position += new Vector3(0f, 0f, speed / 200f);
-						Zpos += 1;
+						Zpos += speed / 10;
 						//Debug.Log(Zpos);
 
 					}
@@ -101,40 +101,40 @@ public class playerSlinky : MonoBehaviour {
 			else if (Xstretch < 100f && Zstretch < 100f) {
 			  if (stretch == 1) {
 				transform.localScale += new Vector3(speed / 100f, 0f, 0f);
-				Xstretch += 1;
+				Xstretch += speed / 10;
 				//Debug.Log(Xstretch);
 
 				transform.position -= new Vector3(speed / 200f, 0f, 0f);
-				Xpos += 1;
+				Xpos += speed / 10;
 				//Debug.Log(Xpos);
 			}
 			else if (stretch == 2) {
 				transform.localScale += new Vector3(speed / 100f, 0f, 0f);
-				Xstretch += 1;
+				Xstretch += speed / 10;
 				//Debug.Log(Xstretch);
 
 				transform.position += new Vector3(speed / 200f, 0f, 0f);
-				Xpos -= 1;
+				Xpos -= speed / 10;
 				//Debug.Log(Xpos);
 			}
 			else if (stretch == 3) {
 				transform.localScale += new Vector3(0f, 0f, speed / 100f);
-				Zstretch += 1;
+				Zstretch += speed / 10;
 				///Debug.Log(Zstretch);
 
 				transform.position -= new Vector3(0f, 0f, speed / 200f);
-				Zpos += 1;
+				Zpos += speed / 10;
 			//	Debug.Log(Zpos);
 
 
 			}
 			else if (stretch == 4) {
 				transform.localScale += new Vector3(0f, 0f, speed / 100f);
-				Zstretch += 1;
+				Zstretch += speed / 10;
 				//Debug.Log(Zstretch);
 
 				transform.position += new Vector3(0f, 0f, speed / 200f);
-				Zpos -= 1;
+				Zpos -= speed / 10;
 				//Debug.Log(Zpos);
 			}
 	}
